@@ -1,0 +1,63 @@
+{
+    "manifestVersion": 1,
+    "id": "rabox-extension",
+    "publisher": "MoimHossain",
+    "version": "1.0.148",
+    "name": "Tribe",
+    "description": "Azure DevOps extensions that provides folder structure for repositories.",
+    "public": false,
+    "categories": ["Azure Repos"],
+    "icons" : {
+        "default": "assets/images/cloud-oven-red.png"
+    },
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "scopes": [
+        "vso.agentpools_manage",
+        "vso.environment_manage",
+        "vso.analytics",
+        "vso.auditlog",
+        "vso.build",
+        "vso.build_execute",
+        "vso.code_manage",
+        "vso.code_full",
+        "vso.extension_manage",
+        "vso.extension.data_write",
+        "vso.memberentitlementmanagement_write",
+        "vso.graph_manage",
+        "vso.project_manage",
+        "vso.release_manage",
+        "vso.work_full"
+    ],
+    "contributions": [        
+        {            
+            "id": "tribe-repogroup-repo",
+            "type": "ms.vss-web.hub",
+            "targets": [
+                "ms.vss-code-web.code-hub-group"
+            ],
+            "properties": {
+                "order": 1,
+                "icon": {
+                    "light": "assets/images/agent-pool.png",
+                    "dark": "assets/images/agent-pool.png"
+                },
+                "name": "Tribe Repositories",
+                "uri": "dist/RepoGroup/RepoGroup.html"
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "assets",
+            "addressable": true
+        },
+        {
+            "path": "dist",
+            "addressable": true
+        }
+    ]
+}
